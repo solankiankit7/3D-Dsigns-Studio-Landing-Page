@@ -1,0 +1,1 @@
+import Page from '../page';\nexport default Page;\n
