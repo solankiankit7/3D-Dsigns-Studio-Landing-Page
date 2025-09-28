@@ -1,1 +1,11 @@
-import '../globals.css';\n\nexport default function RootLayout({children}){\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>{children}</body>\n    </html>\n  );\n}
+import './globals.css';
+import React from 'react';
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head />
+      <body>{children]</body>
+    </html>
+  );
+}
