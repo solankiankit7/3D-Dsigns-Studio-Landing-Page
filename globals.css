@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0A0D12;
+  --fg: #F2F5F8;
+}
+
+html, body { height: 100%; }
+body { background: radial-gradient(1200px 700px at 20% 10%, #0f1624 0%, #0A0D12 60%); color: var(--fg); }
+
+.btn { @apply px-5 py-3 rounded-2xl bg-brand-500 hover:bg-brand-400 transition shadow-lg; }
+.card { @apply rounded-3xl bg-white/5 backdrop-blur border border-white/10 shadow-xl; }
+.navlink { @apply text-white/70 hover:text-white; }
+.section { @apply py-12 md:py-20; }
