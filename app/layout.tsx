@@ -1,0 +1,1 @@
+import RootLayout from '../layout';\nimport '../globals.css';\nexport default RootLayout;\n",
