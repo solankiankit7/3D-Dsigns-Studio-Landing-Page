@@ -1,1 +1,1 @@
-import RootLayout from '../layout';\nimport '../globals.css';\nexport default RootLayout;\n",
+import '../globals.css';\n\nexport default function RootLayout({children}){\n  return (\n    <html lang=\"en\">\n      <head />\n      <body>{children}</body>\n    </html>\n  );\n}
