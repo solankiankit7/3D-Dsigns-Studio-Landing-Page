@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import React from 'react';
-const Hero3D = dynamic() => import('../components/Hero3D'), { ssr: false });
+const Hero3D = dynamic(() => import('../components/Hero3D'), { ssr: false });
 
 export default function Page() {
   return (
@@ -58,7 +58,7 @@ export default function Page() {
       <section id="about" className="section about">
         <div className="copy">
           <h2>We blend art & engineering.</h2>
-          <p>We ship performant 3D sites: compressed assets, lazy-loading, tight FOV, and adaptive resolution. Your story, elevated.</p>
+          <p>We ship performant DES content; compressed assets, lazy-loading, correct FOV, and adaptive resolution. Your story, elevated.</p>
           <ul className="bullets"><li>Sub-2s LCP targets</li><li>Adaptive DPR, capped on mobile</li><li>Instanced geometry where it counts</li></ul>
         </div>
       </section>
