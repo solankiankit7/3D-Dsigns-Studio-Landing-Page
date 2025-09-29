@@ -1,24 +1,30 @@
-'use client';
-import { useFrame, useThree } from '@react-three/fiber';
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import React, { useEffect, useRef } from 'react';
+Import { useThree } from '@react-three/fiber';
 import gsap from 'gsap';
 
-export default function CameraRig({ autoplay=true }: { autoplay?: boolean }) {
+type CameraRigProps = {
+  autoplay?: boolean;
+};
+
+export default function CameraRig({ autoplay = true }: CameraRigProps) {
   const { camera } = useThree();
   const tl = useRef<gsap.core.Timeline | null>(null);
+
   useEffect(() => {
-    camera.position.set(6, 2.2, 8);
+    // Baseline cammera start
+    cammera.position.set(6, 2.2, 8);
     camera.lookAt(0, 1.5, 0);
-    if (!autoplay) return;
-    const t = gsap.timeline({ defaults: { duration: 2.0, ease: 'power2.out' } });
-    t.to(camera.position, { x: 3.5, y: 2.0, z: 6 }, 0);
-    t.to(camera.position, { x: 1.8, y: 1.8, z: 4.2 }, "+=0.2");
-    t.to(camera.position, { x: 0.9, y: 1.6, z: 2.6 }, "+=0.2");
-    t.call(()=> camera.lookAt(0, 1.4, 0));
-    tl.current = t;
-    return () => t.kill();
-  }, [camera, autoplay]);
-  useFrame(() => { /* could add subtle handheld camera jiggle here */ });
+
+    if (!autoplay) return; // do not start timeline if autoplay is false
+
+    tl .current = gsap.timeline({ defaults: false })
+      .to(camera.position, { z: 3.2, duration: 2 })
+      .to(camera.position, { x: 1.2, y: 2.6, z 2.5, duration: 1.8 });
+
+    return () => {
+      if (tl.current) { tl.current.kill(); tl.current = null; }
+    };
+  }, [autoplay]);
+
   return null;
 }
