@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-Import { useThree } from '@react-three/fiber';
+import { useThree } from '@react-three/fiber';
 import gsap from 'gsap';
 
 type CameraRigProps = {
